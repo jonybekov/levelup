@@ -41,9 +41,11 @@ let PartnersComponent = Vue.component("partners-component", {
   <div class="partners">
     <div class="row" v-if='loading == false'>
         <div class="col-xs-6 col-sm-4 col-md-3" v-for='(partner, i) in partnersList' :key='i'>
-        <div class="partner-item">
-        <img :src="partner.data.image.url" alt=""/>
-        </div>
+        <a :href='partner.data.link_to_website.url'>
+          <div  class="partner-item" >
+          <img :src="partner.data.image.url" :alt="partner.data.title[0].text" :title="partner.data.title[0].text" />
+          </div>
+          </a>
         </div>
       </div>
   
