@@ -1,0 +1,278 @@
+@import "./typo";
+@import "./variables";
+@import "./services";
+@import "./about";
+@import "./portfolio";
+@import "./animations";
+@import "./media";
+
+body {
+  margin: 0;
+  font-family: "SF Pro Display", "sans-serif";
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+// #clouds {
+//   height: calc(100vh - 70px);
+// }
+// body>div {
+//   scroll-snap-align: start;
+//   min-height: 100vh !important;
+// }
+
+.link-text {
+  margin-bottom: 0;
+  margin-left: 24px;
+
+  img {
+    margin-right: 12px;
+  }
+
+  a {
+    color: #fff;
+    font-size: 14px;
+
+    &:hover {
+      text-decoration: none;
+      color: #ccc;
+    }
+  }
+}
+
+.wrapper {
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(3rem);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+
+.wrapper>* {
+  scroll-snap-align: start;
+}
+
+.top-bar {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 24px 0;
+}
+
+.navigation {
+  background-color: #fff;
+  color: $primary-color;
+  padding: 24px 0;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 200;
+
+  ul {
+    list-style: none;
+    display: flex;
+
+    li {
+      margin-right: 24px;
+    }
+  }
+}
+
+h1 {
+  color: $primary-color;
+  font-weight: bold;
+}
+
+.headline {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.hero-section {
+  height: $hero-height;
+  width: 100%;
+  // background: url('../assets/bg.png');
+  background-color: $primary-color;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    // content: "";
+    display: block;
+    width: 100%;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%);
+    height: $hero-height;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    position: relative;
+    height: 100%;
+    height: $hero-height;
+    display: flex;
+    z-index: 12;
+
+    .hero-info {
+      align-self: center;
+
+      .hero-title {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 36px;
+        margin-bottom: 24px;
+        color: #fff;
+      }
+
+      .hero-desc {
+        width: 50%;
+        min-width: 200px;
+        color: #fff;
+      }
+    }
+
+    .hero-img {
+      align-self: flex-end;
+      transform: translateY(40px);
+    }
+  }
+}
+
+#info {
+  padding: 82px 0;
+}
+
+.phone-set {
+  display: flex;
+  position: relative;
+
+  .phone-icon2 {
+    position: absolute;
+    left: 80px;
+    top: -35px;
+  }
+
+  .phone-icon3 {
+    margin-left: 55px;
+  }
+}
+
+.server-icon {
+  margin: 20px 0 0 16px;
+}
+
+.scrollContainer {
+  height: 400px;
+  width: 100%;
+  overflow: auto;
+  padding-right: 25px;
+}
+
+.scrollbar-track {
+  opacity: 1 !important;
+}
+
+.scrollbar-track-y {
+  width: 3px !important;
+  right: 8px !important;
+}
+
+.scrollbar-thumb {
+  background: #999 !important;
+  left: -2px !important;
+}
+
+
+///footer
+
+.footer {
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: auto !important;
+
+  .footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 48px;
+    padding-bottom: 28px;
+  }
+
+  .footer-bottom {
+    padding: 20px 0;
+    border-top: 1px solid #fff;
+
+    .row>*:first-child {
+      text-align: left;
+    }
+
+    .row>*:last-child {
+      text-align: right;
+    }
+  }
+
+  .social-list {
+    display: flex;
+
+    .social-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      background-color: rgb(19, 32, 95);
+      transition: .15s all ease-in-out;
+
+      &:hover {
+        background-color: rgba(19, 32, 95, 0.534);
+      }
+
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .raisense-logo {
+    width: 96px;
+    vertical-align: 0;
+    margin-left: 4px;
+  }
+}
+
+.bg-custom {
+  background-color: $primary-color;
+
+  .nav-link {
+    color: #fff !important;
+  }
+}
+
+.partners {
+  padding: 64px 0;
+}
+
+.partner-item {
+  height: 150px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,220 @@
+// Services
+
+.services {
+    padding: 48px 0;
+    text-align: center;
+    position: relative;
+
+    .services-headline {
+        margin-bottom: 56px;
+    }
+
+    &:before {
+        content: '';
+        background-image: url('../assets/left-pattern.svg');
+        width: 260px;
+        height: -webkit-fill-available;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &:after {
+        content: '';
+        background-image: url('../assets/right-pattern.svg');
+        width: 130px;
+        height: 200px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .iphone {
+        max-width: 90%;
+    }
+
+    .service-phone {
+        position: relative;
+
+        .phone-card {
+            img {
+                width: 200px;
+                position: absolute;
+            }
+
+            @for $i from 1 to 7 {
+                .service-img-#{$i} {
+                    opacity: 0;
+                    transition: .2s all ease-out;
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .service-img-1 {
+                top: 136px;
+                right: 20px;
+                transform: translateX(-20%) scale(1.6);
+                left: unset;
+
+                &.active {
+                    transform: translateX(0px) scale(1.3);
+                }
+            }
+
+            .service-img-2 {
+                top: 100px;
+                left: 40px;
+                transform: scale(1.25);
+            }
+
+            .service-img-3 {
+                top: 150px;
+                left: 80px;
+                transform: scale(1.7);
+            }
+
+            .service-img-4 {
+                top: 70px;
+                right: 0px;
+                transform: translateX(20px);
+
+                &.active {
+                    transform: translateX(0) scale(0.8);
+                }
+            }
+
+            .service-img-5 {
+                top: 45%;
+                left: 24%;
+                transform: scale(1.6);
+            }
+
+            .service-img-6 {
+                top: 100px;
+                left: 40px;
+                transform: scale(1.2);
+            }
+
+
+
+
+
+        }
+    }
+}
+
+$arrow-pos: 64px;
+
+.services-left,
+.services-right {
+    padding-top: 20px;
+
+    .service-item {
+        &:after {
+            right: $arrow-pos;
+        }
+
+        &:hover {
+            transform: translateX(20px);
+
+            &:after {
+                opacity: 1;
+                transform: translateX(20px);
+            }
+        }
+    }
+}
+
+.services-left {
+    text-align: right;
+
+    .service-item {
+        &:after {
+            transform: rotate(180deg);
+            left: $arrow-pos;
+        }
+
+        &:hover {
+            transform: translateX(-20px);
+
+            &:after {
+                opacity: 1;
+                transform: translateX(-20px) rotate(180deg);
+            }
+        }
+    }
+
+    .service-title {
+        &:after {
+            right: 0;
+        }
+    }
+}
+
+.services-right {
+    text-align: left;
+
+    .service-item {
+        &:hover {
+            transform: translateX(20px);
+        }
+    }
+
+    .service-title {
+        &:after {
+            left: 0;
+        }
+    }
+}
+
+.service-item {
+    padding: 24px 32px 24px 24px;
+    margin-bottom: 12px;
+    position: relative;
+    transition: $card-transition;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 28px;
+        background-image: url('../assets/arrow.svg');
+        width: 42px;
+        height: 16px;
+        opacity: 0;
+        transition: $card-transition;
+    }
+
+    &:hover {
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        background-color: #fff;
+    }
+
+    .service-title {
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 24px;
+        color: $primary-color;
+        font-weight: bold;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 16px;
+
+        &:after {
+            content: '';
+            width: 100px;
+            background-color: $secondary-color;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    .service-desc {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
