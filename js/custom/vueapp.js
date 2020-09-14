@@ -39,6 +39,8 @@ var TabComponent = Vue.component("tabs", {
 let PartnersComponent = Vue.component("partners-component", {
   template: `
   <div class="partners">
+
+    <h1 class="headline text-center my-5">Наши партнеры</h1>
     <div class="row" v-if='loading == false'>
         <div class="col-xs-6 col-sm-4 col-md-3" v-for='(partner, i) in partnersList' :key='i'>
         <a :href='partner.data.link_to_website.url'>
