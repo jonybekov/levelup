@@ -48,15 +48,15 @@ ul {
 }
 
 .wrapper {
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(3rem);
-  scroll-snap-type: y mandatory;
+//   scroll-snap-type: mandatory;
+//   scroll-snap-points-y: repeat(3rem);
+//   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   max-height: 100vh;
 }
 
 .wrapper>* {
-  scroll-snap-align: start;
+//   scroll-snap-align: start;
 }
 
 .top-bar {
